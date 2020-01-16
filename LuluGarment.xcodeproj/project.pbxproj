@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		728E843B23D1191E00B92C83 /* GarmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E843A23D1191E00B92C83 /* GarmentCell.swift */; };
+		728E843E23D11C2000B92C83 /* Garment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E843D23D11C2000B92C83 /* Garment.swift */; };
 		7B45910923D0EFCA009C6E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45910823D0EFCA009C6E76 /* AppDelegate.swift */; };
 		7B45910B23D0EFCA009C6E76 /* GarmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45910A23D0EFCA009C6E76 /* GarmentListViewController.swift */; };
 		7B45910E23D0EFCA009C6E76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B45910C23D0EFCA009C6E76 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		728E843A23D1191E00B92C83 /* GarmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentCell.swift; sourceTree = "<group>"; };
+		728E843D23D11C2000B92C83 /* Garment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garment.swift; sourceTree = "<group>"; };
 		7B45910523D0EFCA009C6E76 /* LuluGarment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuluGarment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B45910823D0EFCA009C6E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B45910A23D0EFCA009C6E76 /* GarmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentListViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		728E843923D118F000B92C83 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				728E843A23D1191E00B92C83 /* GarmentCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		728E843C23D11C0E00B92C83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				728E843D23D11C2000B92C83 /* Garment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7B4590FC23D0EFCA009C6E76 = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +119,11 @@
 		7B45910723D0EFCA009C6E76 /* LuluGarment */ = {
 			isa = PBXGroup;
 			children = (
+				728E843C23D11C0E00B92C83 /* Models */,
 				7B45910823D0EFCA009C6E76 /* AppDelegate.swift */,
 				7B45913623D0F04C009C6E76 /* Controllers */,
 				7B45913823D0F122009C6E76 /* Resources */,
+				728E843923D118F000B92C83 /* Views */,
 			);
 			path = LuluGarment;
 			sourceTree = "<group>";
@@ -277,6 +299,8 @@
 			files = (
 				7B45913A23D0F42F009C6E76 /* NewGarmentViewController.swift in Sources */,
 				7B45910B23D0EFCA009C6E76 /* GarmentListViewController.swift in Sources */,
+				728E843E23D11C2000B92C83 /* Garment.swift in Sources */,
+				728E843B23D1191E00B92C83 /* GarmentCell.swift in Sources */,
 				7B45910923D0EFCA009C6E76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
