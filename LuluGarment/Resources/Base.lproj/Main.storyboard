@@ -24,6 +24,9 @@
                                     <segment title="Alpha"/>
                                     <segment title="Creation Time"/>
                                 </segments>
+                                <connections>
+                                    <action selector="orderGarmentList:" destination="BYZ-38-t0r" eventType="valueChanged" id="42v-bm-xWA"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PvT-gA-lgI">
                                 <rect key="frame" x="0.0" y="112" width="375" height="555"/>
@@ -47,10 +50,14 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="garmentName" destination="gTt-Yh-qwC" id="aeo-Ll-UmL"/>
-                                            <segue destination="9qk-kA-2wx" kind="presentation" id="Gfj-8U-nUa"/>
+                                            <segue destination="9qk-kA-2wx" kind="presentation" identifier="garment" id="Gfj-8U-nUa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mZB-Md-pnR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yb7-Y6-Ay4"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,40 +72,89 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="List" largeTitleDisplayMode="always" id="PNK-EE-38e"/>
+                    <navigationItem key="navigationItem" title="List" largeTitleDisplayMode="always" id="PNK-EE-38e">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AOX-bl-UVt">
+                            <connections>
+                                <action selector="addNewGarment:" destination="BYZ-38-t0r" id="cOQ-d1-xFX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="tQK-Jn-0g9" id="OF0-Hg-9wh"/>
+                        <outlet property="tableView" destination="PvT-gA-lgI" id="fgq-Mj-oa0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926" y="-672"/>
         </scene>
-        <!--New Garment View Controller-->
+        <!--Garment View Controller-->
         <scene sceneID="2gu-rb-kc1">
             <objects>
-                <viewController id="9qk-kA-2wx" customClass="NewGarmentViewController" customModule="LuluGarment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9qk-kA-2wx" customClass="GarmentViewController" customModule="LuluGarment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTx-x7-6TI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIf-f7-cNU">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhf-vt-lAl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Add" largeTitleDisplayMode="always" id="HvE-QN-RK3"/>
+                                    <navigationItem title="Add" id="A67-Jo-als">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WdE-Li-Wdd">
+                                            <connections>
+                                                <action selector="cancel:" destination="9qk-kA-2wx" id="FFv-nz-NnB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="50l-hw-NpU">
+                                            <connections>
+                                                <action selector="saveNewGarment:" destination="9qk-kA-2wx" id="J0y-jX-sws"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4h0-oC-R7q">
+                                <rect key="frame" x="20" y="84" width="335" height="60.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChU-mG-jYX">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Garment Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3WT-NV-4YW">
+                                        <rect key="frame" x="0.0" y="30.5" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ChU-mG-jYX" secondAttribute="trailing" id="5tF-UG-2tM"/>
+                                    <constraint firstAttribute="trailing" secondItem="3WT-NV-4YW" secondAttribute="trailing" id="elb-05-NJX"/>
+                                    <constraint firstItem="ChU-mG-jYX" firstAttribute="leading" secondItem="4h0-oC-R7q" secondAttribute="leading" id="toP-jE-wgC"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NIf-f7-cNU" firstAttribute="trailing" secondItem="oG9-or-78g" secondAttribute="trailing" id="Pgm-xa-zdz"/>
-                            <constraint firstItem="NIf-f7-cNU" firstAttribute="leading" secondItem="oG9-or-78g" secondAttribute="leading" id="atB-VX-GDq"/>
-                            <constraint firstItem="NIf-f7-cNU" firstAttribute="top" secondItem="oG9-or-78g" secondAttribute="top" id="jJJ-oT-Jpj"/>
-                            <constraint firstItem="NIf-f7-cNU" firstAttribute="top" secondItem="oG9-or-78g" secondAttribute="top" id="lWn-uA-pVi"/>
+                            <constraint firstItem="mhf-vt-lAl" firstAttribute="leading" secondItem="oG9-or-78g" secondAttribute="leading" id="8Zx-IK-bkO"/>
+                            <constraint firstItem="4h0-oC-R7q" firstAttribute="leading" secondItem="oG9-or-78g" secondAttribute="leading" constant="20" id="8qX-fn-VsY"/>
+                            <constraint firstItem="oG9-or-78g" firstAttribute="trailing" secondItem="4h0-oC-R7q" secondAttribute="trailing" constant="20" id="c30-Sn-hVa"/>
+                            <constraint firstItem="4h0-oC-R7q" firstAttribute="top" secondItem="mhf-vt-lAl" secondAttribute="bottom" constant="20" id="c4o-oq-Bo7"/>
+                            <constraint firstItem="mhf-vt-lAl" firstAttribute="trailing" secondItem="oG9-or-78g" secondAttribute="trailing" id="eza-Xf-UwH"/>
+                            <constraint firstItem="mhf-vt-lAl" firstAttribute="top" secondItem="oG9-or-78g" secondAttribute="top" id="z8J-bn-doZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oG9-or-78g"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="mhf-vt-lAl" id="5VS-Wg-PsH"/>
+                        <outlet property="newGarmentName" destination="3WT-NV-4YW" id="6rC-kx-36R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LN0-Yx-mwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="-672"/>
+            <point key="canvasLocation" x="1688.8" y="-672.41379310344837"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="viW-OM-y9f">

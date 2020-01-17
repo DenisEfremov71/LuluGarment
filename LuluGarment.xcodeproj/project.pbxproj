@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		728E843B23D1191E00B92C83 /* GarmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E843A23D1191E00B92C83 /* GarmentCell.swift */; };
 		728E843E23D11C2000B92C83 /* Garment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E843D23D11C2000B92C83 /* Garment.swift */; };
+		728E844823D1225E00B92C83 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728E844623D1225C00B92C83 /* RealmSwift.framework */; };
+		728E844923D1225E00B92C83 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 728E844623D1225C00B92C83 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		728E844A23D1225E00B92C83 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728E844723D1225E00B92C83 /* Realm.framework */; };
+		728E844B23D1225E00B92C83 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 728E844723D1225E00B92C83 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		728E844E23D1269700B92C83 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E844D23D1269700B92C83 /* ErrorPresenter.swift */; };
+		728E845323D13EAA00B92C83 /* GarmentListViewController-UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E845223D13EAA00B92C83 /* GarmentListViewController-UITableViewDataSource.swift */; };
+		728E845B23D145EF00B92C83 /* GarmentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E845A23D145EF00B92C83 /* GarmentPresenter.swift */; };
+		72A30B5923D22B8600ADB9F2 /* GarmentViewController-UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A30B5823D22B8600ADB9F2 /* GarmentViewController-UITextFieldDelegate.swift */; };
+		72A30B5B23D2478800ADB9F2 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A30B5A23D2478800ADB9F2 /* Errors.swift */; };
+		72A30B5D23D2500B00ADB9F2 /* GarmentListViewController-Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A30B5C23D2500B00ADB9F2 /* GarmentListViewController-Configuration.swift */; };
+		72A30B5F23D2509300ADB9F2 /* GarmentViewController-Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A30B5E23D2509300ADB9F2 /* GarmentViewController-Configuration.swift */; };
 		7B45910923D0EFCA009C6E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45910823D0EFCA009C6E76 /* AppDelegate.swift */; };
 		7B45910B23D0EFCA009C6E76 /* GarmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45910A23D0EFCA009C6E76 /* GarmentListViewController.swift */; };
 		7B45910E23D0EFCA009C6E76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B45910C23D0EFCA009C6E76 /* Main.storyboard */; };
@@ -16,7 +27,7 @@
 		7B45911323D0EFD0009C6E76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B45911123D0EFD0009C6E76 /* LaunchScreen.storyboard */; };
 		7B45911E23D0EFD0009C6E76 /* LuluGarmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45911D23D0EFD0009C6E76 /* LuluGarmentTests.swift */; };
 		7B45912923D0EFD0009C6E76 /* LuluGarmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45912823D0EFD0009C6E76 /* LuluGarmentUITests.swift */; };
-		7B45913A23D0F42F009C6E76 /* NewGarmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45913923D0F42F009C6E76 /* NewGarmentViewController.swift */; };
+		7B45913A23D0F42F009C6E76 /* GarmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45913923D0F42F009C6E76 /* GarmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +47,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		728E844523D121FA00B92C83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				728E844B23D1225E00B92C83 /* Realm.framework in Embed Frameworks */,
+				728E844923D1225E00B92C83 /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		728E843A23D1191E00B92C83 /* GarmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentCell.swift; sourceTree = "<group>"; };
 		728E843D23D11C2000B92C83 /* Garment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garment.swift; sourceTree = "<group>"; };
+		728E844623D1225C00B92C83 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		728E844723D1225E00B92C83 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		728E844D23D1269700B92C83 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		728E845223D13EAA00B92C83 /* GarmentListViewController-UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarmentListViewController-UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		728E845A23D145EF00B92C83 /* GarmentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentPresenter.swift; sourceTree = "<group>"; };
+		72A30B5823D22B8600ADB9F2 /* GarmentViewController-UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarmentViewController-UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		72A30B5A23D2478800ADB9F2 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		72A30B5C23D2500B00ADB9F2 /* GarmentListViewController-Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarmentListViewController-Configuration.swift"; sourceTree = "<group>"; };
+		72A30B5E23D2509300ADB9F2 /* GarmentViewController-Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarmentViewController-Configuration.swift"; sourceTree = "<group>"; };
 		7B45910523D0EFCA009C6E76 /* LuluGarment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuluGarment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B45910823D0EFCA009C6E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B45910A23D0EFCA009C6E76 /* GarmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentListViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +87,7 @@
 		7B45912423D0EFD0009C6E76 /* LuluGarmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuluGarmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B45912823D0EFD0009C6E76 /* LuluGarmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuluGarmentUITests.swift; sourceTree = "<group>"; };
 		7B45912A23D0EFD0009C6E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B45913923D0F42F009C6E76 /* NewGarmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGarmentViewController.swift; sourceTree = "<group>"; };
+		7B45913923D0F42F009C6E76 /* GarmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				728E844A23D1225E00B92C83 /* Realm.framework in Frameworks */,
+				728E844823D1225E00B92C83 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,13 +129,36 @@
 			isa = PBXGroup;
 			children = (
 				728E843D23D11C2000B92C83 /* Garment.swift */,
+				72A30B5A23D2478800ADB9F2 /* Errors.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		728E844C23D1264D00B92C83 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				728E844D23D1269700B92C83 /* ErrorPresenter.swift */,
+				728E845A23D145EF00B92C83 /* GarmentPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		728E845123D13C8300B92C83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				72A30B5C23D2500B00ADB9F2 /* GarmentListViewController-Configuration.swift */,
+				728E845223D13EAA00B92C83 /* GarmentListViewController-UITableViewDataSource.swift */,
+				72A30B5E23D2509300ADB9F2 /* GarmentViewController-Configuration.swift */,
+				72A30B5823D22B8600ADB9F2 /* GarmentViewController-UITextFieldDelegate.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7B4590FC23D0EFCA009C6E76 = {
 			isa = PBXGroup;
 			children = (
+				728E844723D1225E00B92C83 /* Realm.framework */,
+				728E844623D1225C00B92C83 /* RealmSwift.framework */,
 				7B45910723D0EFCA009C6E76 /* LuluGarment */,
 				7B45911C23D0EFD0009C6E76 /* LuluGarmentTests */,
 				7B45912723D0EFD0009C6E76 /* LuluGarmentUITests */,
@@ -119,9 +179,11 @@
 		7B45910723D0EFCA009C6E76 /* LuluGarment */ = {
 			isa = PBXGroup;
 			children = (
-				728E843C23D11C0E00B92C83 /* Models */,
+				728E845123D13C8300B92C83 /* Extensions */,
 				7B45910823D0EFCA009C6E76 /* AppDelegate.swift */,
 				7B45913623D0F04C009C6E76 /* Controllers */,
+				728E843C23D11C0E00B92C83 /* Models */,
+				728E844C23D1264D00B92C83 /* Presenters */,
 				7B45913823D0F122009C6E76 /* Resources */,
 				728E843923D118F000B92C83 /* Views */,
 			);
@@ -150,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				7B45910A23D0EFCA009C6E76 /* GarmentListViewController.swift */,
-				7B45913923D0F42F009C6E76 /* NewGarmentViewController.swift */,
+				7B45913923D0F42F009C6E76 /* GarmentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +238,7 @@
 				7B45910123D0EFCA009C6E76 /* Sources */,
 				7B45910223D0EFCA009C6E76 /* Frameworks */,
 				7B45910323D0EFCA009C6E76 /* Resources */,
+				728E844523D121FA00B92C83 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,11 +360,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B45913A23D0F42F009C6E76 /* NewGarmentViewController.swift in Sources */,
+				7B45913A23D0F42F009C6E76 /* GarmentViewController.swift in Sources */,
 				7B45910B23D0EFCA009C6E76 /* GarmentListViewController.swift in Sources */,
 				728E843E23D11C2000B92C83 /* Garment.swift in Sources */,
+				72A30B5D23D2500B00ADB9F2 /* GarmentListViewController-Configuration.swift in Sources */,
 				728E843B23D1191E00B92C83 /* GarmentCell.swift in Sources */,
 				7B45910923D0EFCA009C6E76 /* AppDelegate.swift in Sources */,
+				72A30B5F23D2509300ADB9F2 /* GarmentViewController-Configuration.swift in Sources */,
+				728E845323D13EAA00B92C83 /* GarmentListViewController-UITableViewDataSource.swift in Sources */,
+				72A30B5B23D2478800ADB9F2 /* Errors.swift in Sources */,
+				72A30B5923D22B8600ADB9F2 /* GarmentViewController-UITextFieldDelegate.swift in Sources */,
+				728E844E23D1269700B92C83 /* ErrorPresenter.swift in Sources */,
+				728E845B23D145EF00B92C83 /* GarmentPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +548,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LuluGarment/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,6 +570,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LuluGarment/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
