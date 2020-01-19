@@ -11,12 +11,16 @@ import RealmSwift
 
 class GarmentPresenter {
     
-    func addGarment(_ name: String) {
+    var realm: Realm!
+    
+    func addGarment(_ garment: Garment) throws {
         
-        // TODO: add error handling
-        let realm = try! Realm()
+        do {
+            realm = try Realm()
+        } catch {
+            throw RealmError.instanceCreationFailed
+        }
         
-        let garment = Garment(name: name)
         garment.creationTime = Date()
         
         do {
@@ -24,65 +28,87 @@ class GarmentPresenter {
                 realm.add(garment)
             }
         } catch {
-            // TODO: add error handling
-            print(error.localizedDescription)
+            throw RealmError.writeTransactionFailed
         }
-        
     }
     
-    func getGarments() -> [Garment]? {
+    func getAllGarments() throws -> [Garment] {
         
-        // TODO: add error handling
-        let realm = try! Realm()
+        do {
+            realm = try Realm()
+        } catch {
+            throw RealmError.instanceCreationFailed
+        }
         
         let garments = realm.objects(Garment.self)
         
         return garments.map({$0})
     }
     
-    func updateGarment(_ garment: Garment, newName name: String) {
+    func updateGarment(_ garment: Garment, newName name: String) throws {
         
-        // TODO: add error handling
-        let realm = try! Realm()
+        do {
+            realm = try Realm()
+        } catch {
+            throw RealmError.instanceCreationFailed
+        }
         
         do {
             try realm.write {
                 garment.name = name
             }
         } catch {
-            // TODO: add error handling
-            print(error.localizedDescription)
+            throw RealmError.writeTransactionFailed
         }
     }
     
-    func deleteGarment (_ garment: Garment) {
+    func deleteGarment (_ garment: Garment) throws {
         
-        // TODO: add error handling
-        let realm = try! Realm()
+        do {
+            realm = try Realm()
+        } catch {
+            throw RealmError.instanceCreationFailed
+        }
         
         do {
             try realm.write {
                 realm.delete(garment)
             }
         } catch {
-            // TODO: add error handling
-            print(error.localizedDescription)
+            throw RealmError.writeTransactionFailed
         }
     }
     
-    func garmentExists(_ name: String) -> Bool {
-        
-        let predicate = NSPredicate(format: "name = %@", name)
-        
-        // TODO: add error handling
-        let realm = try! Realm()
-        
-        if realm.objects(Garment.self).filter(predicate).first != nil {
-            return true
-        } else {
-            return false
+    func deleteAllGarments() throws {
+                
+        do {
+            realm = try Realm()
+        } catch {
+            throw RealmError.instanceCreationFailed
         }
         
+        let allGarments = realm.objects(Garment.self)
+        
+        do {
+            try realm.write {
+                realm.delete(allGarments)
+            }
+        } catch {
+            throw RealmError.writeTransactionFailed
+        }
+    }
+    
+    func getGarment(by name: String) throws -> Garment? {
+        
+        do {
+            realm = try Realm()
+        } catch {
+            throw RealmError.instanceCreationFailed
+        }
+        
+        let predicate = NSPredicate(format: "name = %@", name)
+        let garment = realm.objects(Garment.self).filter(predicate).first
+        return garment
     }
     
 }

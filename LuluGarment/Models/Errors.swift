@@ -12,3 +12,8 @@ enum GarmentValidationError: String, Error {
     case emptyName = "Garment name is empty"
     case existingName = "Garment name already exists"
 }
+
+enum RealmError: String, Error {
+    case instanceCreationFailed = "Realm instance creation failed"
+    case writeTransactionFailed = "Realm write transaction failed"
+}

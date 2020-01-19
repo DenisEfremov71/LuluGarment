@@ -11,8 +11,11 @@ import Foundation
 extension GarmentListViewController {
     
     func loadData() {
-        if let garments = appDelegate.garmentPresenter.getGarments() {
-            garmentArray = garments
+        do {
+            garmentArray = try appDelegate.garmentPresenter.getAllGarments()
+        } catch {
+            appDelegate.errorPresenter.message = (error as! RealmError).rawValue
+            appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
         }
     }
     
@@ -34,6 +37,18 @@ extension GarmentListViewController {
                 return val1.creationTime > val2.creationTime
             }
         }
+    }
+    
+    func deleteAllGarments() {
+        do {
+            try appDelegate.garmentPresenter.deleteAllGarments()
+        } catch {
+            appDelegate.errorPresenter.message = (error as! RealmError).rawValue
+            appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
+            return
+        }
+        garmentArray.removeAll()
+        tableView.reloadData()
     }
     
 }

@@ -32,7 +32,13 @@ extension GarmentListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let garmentObjectToDelete = garmentArray[indexPath.row]
-            appDelegate.garmentPresenter.deleteGarment(garmentObjectToDelete)
+            do {
+                try appDelegate.garmentPresenter.deleteGarment(garmentObjectToDelete)
+            } catch {
+                appDelegate.errorPresenter.message = (error as! RealmError).rawValue
+                appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
+                return
+            }
             garmentArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

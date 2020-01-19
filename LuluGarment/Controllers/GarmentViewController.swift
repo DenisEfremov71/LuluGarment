@@ -42,14 +42,28 @@ class GarmentViewController: UIViewController {
         let result = validateNewGarmentName()
         if result.0 == false {
             appDelegate.errorPresenter.message = result.1!.rawValue
-            appDelegate.errorPresenter.present(in: self)
+            appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
             return
         }
         // add a new garment
         if garment == nil {
-            appDelegate.garmentPresenter.addGarment(newGarmentName.text!)
+            garment = Garment(name: newGarmentName.text!)
+            do {
+                try appDelegate.garmentPresenter.addGarment(garment!)
+            } catch let error {
+                appDelegate.errorPresenter.message = (error as! RealmError).rawValue
+                appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
+                garment = nil
+                return
+            }
         } else { // update
-            appDelegate.garmentPresenter.updateGarment(garment!, newName: newGarmentName.text!)
+            do {
+                try appDelegate.garmentPresenter.updateGarment(garment!, newName: newGarmentName.text!)
+            } catch {
+                appDelegate.errorPresenter.message = (error as! RealmError).rawValue
+                appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
+                return
+            }
         }
         cancel(nil)
     }

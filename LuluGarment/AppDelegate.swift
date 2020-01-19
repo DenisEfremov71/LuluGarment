@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var garmentPresenter = GarmentPresenter()
-    var errorPresenter = ErrorPresenter(message:"")
+    var errorPresenter = ErrorPresenter(message: "")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true

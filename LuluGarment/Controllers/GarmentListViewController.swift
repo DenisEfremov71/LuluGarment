@@ -58,5 +58,12 @@ class GarmentListViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func deleteAll(_ sender: Any) {
+        guard garmentArray.count > 0 else {
+            return
+        }
+        appDelegate.errorPresenter.message = Messages.Alerts.deleteAll
+        appDelegate.errorPresenter.present(in: self, style: .actionSheet, title: "Warning")
+    }
 }
 

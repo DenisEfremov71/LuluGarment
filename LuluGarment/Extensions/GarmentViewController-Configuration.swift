@@ -23,9 +23,18 @@ extension GarmentViewController {
     
     func validateNewGarmentName() -> (Bool, GarmentValidationError?) {
         let name = newGarmentName.text!
+        var garment: Garment?
+        do {
+            garment = try appDelegate.garmentPresenter.getGarment(by: name)
+        } catch {
+            appDelegate.errorPresenter.message = (error as! RealmError).rawValue
+            appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
+            return (false, nil)
+        }
+        
         if name.count == 0 {
             return (false, GarmentValidationError.emptyName)
-        } else if name.count > 0 && appDelegate.garmentPresenter.garmentExists(name) {
+        } else if name.count > 0 && garment != nil {
             return (false, GarmentValidationError.existingName)
         }
         return (true, nil)

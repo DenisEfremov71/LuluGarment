@@ -18,3 +18,9 @@ class Garment: Object {
         self.name = name
     }
 }
+
+extension Garment {
+    static func ==(lhs: Garment, rhs: Garment) -> Bool {
+        return lhs.name == rhs.name && lhs.creationTime == rhs.creationTime
+    }
+}

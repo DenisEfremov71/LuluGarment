@@ -13,7 +13,7 @@
         <!--List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GarmentListViewController" customModule="LuluGarment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GarmentListViewController" id="BYZ-38-t0r" customClass="GarmentListViewController" customModule="LuluGarment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="List" largeTitleDisplayMode="always" id="PNK-EE-38e">
+                    <navigationItem key="navigationItem" title="List" largeTitleDisplayMode="never" id="PNK-EE-38e">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="9eQ-En-NWX">
+                            <connections>
+                                <action selector="deleteAll:" destination="BYZ-38-t0r" id="Me7-q3-TWs"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AOX-bl-UVt">
                             <connections>
                                 <action selector="addNewGarment:" destination="BYZ-38-t0r" id="cOQ-d1-xFX"/>
@@ -91,7 +96,7 @@
         <!--Garment View Controller-->
         <scene sceneID="2gu-rb-kc1">
             <objects>
-                <viewController id="9qk-kA-2wx" customClass="GarmentViewController" customModule="LuluGarment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GarmentViewController" id="9qk-kA-2wx" customClass="GarmentViewController" customModule="LuluGarment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTx-x7-6TI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +104,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhf-vt-lAl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Add" id="A67-Jo-als">
+                                    <navigationItem title="Add" largeTitleDisplayMode="never" id="A67-Jo-als">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WdE-Li-Wdd">
                                             <connections>
                                                 <action selector="cancel:" destination="9qk-kA-2wx" id="FFv-nz-NnB"/>
