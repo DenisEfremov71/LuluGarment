@@ -29,7 +29,7 @@ extension GarmentViewController {
         } catch {
             appDelegate.errorPresenter.message = (error as! RealmError).rawValue
             appDelegate.errorPresenter.present(in: self, style: .alert, title: "Error")
-            return (false, nil)
+            return (false, GarmentValidationError.forwarded)
         }
         
         if name.count == 0 {

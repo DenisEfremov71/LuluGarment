@@ -166,8 +166,8 @@
 		728E844C23D1264D00B92C83 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				728E844D23D1269700B92C83 /* UIPresenters.swift */,
 				728E845A23D145EF00B92C83 /* GarmentPresenter.swift */,
+				728E844D23D1269700B92C83 /* UIPresenters.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 		72A30B7923D37B3100ADB9F2 /* LuluGarmentPerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				72A30B7A23D37B3100ADB9F2 /* LuluGarmentPerformanceTests.swift */,
 				72A30B7C23D37B3100ADB9F2 /* Info.plist */,
+				72A30B7A23D37B3100ADB9F2 /* LuluGarmentPerformanceTests.swift */,
 			);
 			path = LuluGarmentPerformanceTests;
 			sourceTree = "<group>";
@@ -245,9 +245,9 @@
 		7B45910723D0EFCA009C6E76 /* LuluGarment */ = {
 			isa = PBXGroup;
 			children = (
-				728E845123D13C8300B92C83 /* Extensions */,
 				7B45910823D0EFCA009C6E76 /* AppDelegate.swift */,
 				7B45913623D0F04C009C6E76 /* Controllers */,
+				728E845123D13C8300B92C83 /* Extensions */,
 				728E843C23D11C0E00B92C83 /* Models */,
 				728E844C23D1264D00B92C83 /* Presenters */,
 				7B45913823D0F122009C6E76 /* Resources */,
@@ -270,8 +270,8 @@
 		7B45912723D0EFD0009C6E76 /* LuluGarmentUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7B45912823D0EFD0009C6E76 /* LuluGarmentUITests.swift */,
 				7B45912A23D0EFD0009C6E76 /* Info.plist */,
+				7B45912823D0EFD0009C6E76 /* LuluGarmentUITests.swift */,
 			);
 			path = LuluGarmentUITests;
 			sourceTree = "<group>";
@@ -288,10 +288,10 @@
 		7B45913823D0F122009C6E76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7B45910C23D0EFCA009C6E76 /* Main.storyboard */,
 				7B45910F23D0EFD0009C6E76 /* Assets.xcassets */,
-				7B45911123D0EFD0009C6E76 /* LaunchScreen.storyboard */,
 				7B45911423D0EFD0009C6E76 /* Info.plist */,
+				7B45911123D0EFD0009C6E76 /* LaunchScreen.storyboard */,
+				7B45910C23D0EFCA009C6E76 /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

@@ -11,6 +11,7 @@ import Foundation
 enum GarmentValidationError: String, Error {
     case emptyName = "Garment name is empty"
     case existingName = "Garment name already exists"
+    case forwarded
 }
 
 enum RealmError: String, Error {
